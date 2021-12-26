@@ -46,6 +46,12 @@ public abstract class AbstractBanner implements BannerRender {
         }
     }
 
+    /**
+     * 生成 Banner
+     *
+     * @param bannerText String
+     * @return String
+     */
     protected abstract String generatorBanner(String bannerText);
 
     @Override
