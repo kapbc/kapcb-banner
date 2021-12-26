@@ -14,6 +14,7 @@ public class VersionBanner extends AbstractBanner {
 
     public VersionBanner(Class<?> resourceClass, String resourceLocation, String defaultBanner) {
         super(resourceClass, resourceLocation, defaultBanner);
+        initialize();
     }
 
     @Override

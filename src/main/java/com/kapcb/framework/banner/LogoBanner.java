@@ -9,6 +9,8 @@ import com.taobao.text.ui.LabelElement;
 import com.taobao.text.ui.TableElement;
 import com.taobao.text.util.RenderUtil;
 
+import static com.taobao.text.ui.Element.label;
+
 /**
  * <a>Title: LogoBanner </a>
  * <a>Author: Kapcb <a>
@@ -47,6 +49,7 @@ public class LogoBanner extends AbstractBanner {
         this.elementLineCount = elementLineCount;
         this.elementColors = elementColors;
         this.boldOff = boldOff;
+        initialize();
     }
 
     @Override
@@ -72,9 +75,9 @@ public class LogoBanner extends AbstractBanner {
 
             for (int k = 0; k < this.elementCount; k++) {
                 if (this.boldOff) {
-                    labelElement[k] = Element.label(elementTexts[k]).style(Decoration.bold_off.fg(elementColors[k]));
+                    labelElement[k] = label(elementTexts[k]).style(Decoration.bold_off.fg(elementColors[k]));
                 } else {
-                    labelElement[k] = Element.label(elementTexts[k]).style(Decoration.bold.fg(elementColors[k]));
+                    labelElement[k] = label(elementTexts[k]).style(Decoration.bold.fg(elementColors[k]));
                 }
             }
 

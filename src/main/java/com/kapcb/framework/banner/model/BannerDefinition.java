@@ -80,7 +80,7 @@ public class BannerDefinition implements Banner {
 
     @Override
     public void setResourceLocation(String location) {
-        if (Objects.nonNull(location)) {
+        if (location != null) {
             this.resourceLocation = location;
         } else {
             this.resourceLocation = null;

@@ -15,9 +15,9 @@ import com.taobao.text.Color;
 public class Test {
 
     public static void main(String... args) {
-        LogoBanner logoBanner = new LogoBanner(Test.class, "resources/kapcb-banner.txt", "Hello Kapcb!", 5, 7, new Color[]{Color.red, Color.yellow, Color.cyan, Color.magenta}, false);
+        LogoBanner logoBanner = new LogoBanner(Test.class, "/kapcb-banner.txt", "Hello Kapcb!", 5, 21, new Color[]{Color.red, Color.yellow, Color.cyan, Color.magenta,Color.yellow}, false);
         String banner = logoBanner.getBanner();
-        System.out.println("banner = " + banner);
+        System.out.println( banner);
     }
 
 }

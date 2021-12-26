@@ -28,7 +28,6 @@ public abstract class AbstractBanner implements BannerRender {
 
     public AbstractBanner(Class<?> resourceClass, String resourceLocation, String defaultBanner) {
         this.banner = new BannerDefinition(resourceClass, resourceLocation, defaultBanner);
-        initialize();
     }
 
     @Override
