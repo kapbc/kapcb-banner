@@ -62,7 +62,7 @@ public class BannerDefinition implements Banner {
         if (this.resourceLocation == null) {
             return null;
         }
-        return this.resourceClass.getResourceAsStream(file);
+        return this.resourceClass.getResourceAsStream(this.resourceLocation);
     }
 
     @Override
