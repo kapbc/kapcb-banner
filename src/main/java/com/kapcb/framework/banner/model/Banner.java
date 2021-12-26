@@ -18,4 +18,9 @@ public interface Banner {
 
     InputStream prepareRender();
 
+    void setBanner(String banner);
+
+    String getBanner();
+
+    String getDefaultBanner();
 }

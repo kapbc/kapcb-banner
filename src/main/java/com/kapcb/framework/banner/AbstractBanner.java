@@ -1,9 +1,11 @@
 package com.kapcb.framework.banner;
 
 import com.kapcb.framework.banner.model.Banner;
-import com.kapcb.framework.banner.model.BannerDefinition;
 import com.kapcb.framework.common.constants.enums.StringPool;
+import com.taobao.text.util.RenderUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,29 +20,35 @@ import java.io.InputStream;
  * @date 2021/12/26 16:30
  * @since 1.0
  */
+@Slf4j
 public abstract class AbstractBanner implements BannerRender {
 
     protected Banner banner;
 
     @Override
     public void initialize() {
-        String bannerText;
+        String bannerText = null;
         try (InputStream inputStream = banner.prepareRender()) {
             bannerText = IOUtils.toString(inputStream, StringPool.CHARACTER_SET_UTF_8_LOWER.value());
-
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error("initialize banner error, error message is : {}", e.getMessage());
+        } finally {
+            if (StringUtils.isNotBlank(bannerText)) {
+                banner.setBanner(generatorBanner(bannerText));
+            }
         }
     }
 
+    protected abstract String generatorBanner(String bannerText);
+
     @Override
     public String getBanner() {
-        return null;
+        return banner.getBanner();
     }
 
     @Override
     public String getPlainBanner() {
-        return null;
+        return RenderUtil.ansiToPlainText(banner.getBanner());
     }
 
 }
