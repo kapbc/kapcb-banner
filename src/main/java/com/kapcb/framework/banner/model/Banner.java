@@ -18,6 +18,8 @@ public interface Banner {
 
     InputStream prepareRender();
 
+    String getImplementationVersion();
+
     void setBanner(String banner);
 
     String getBanner();

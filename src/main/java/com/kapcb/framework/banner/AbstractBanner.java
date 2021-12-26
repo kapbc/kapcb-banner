@@ -1,6 +1,7 @@
 package com.kapcb.framework.banner;
 
 import com.kapcb.framework.banner.model.Banner;
+import com.kapcb.framework.banner.model.BannerDefinition;
 import com.kapcb.framework.common.constants.enums.StringPool;
 import com.taobao.text.util.RenderUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +25,11 @@ import java.io.InputStream;
 public abstract class AbstractBanner implements BannerRender {
 
     protected Banner banner;
+
+    public AbstractBanner(Class<?> resourceClass, String resourceLocation, String defaultBanner) {
+        this.banner = new BannerDefinition(resourceClass, resourceLocation, defaultBanner);
+        initialize();
+    }
 
     @Override
     public void initialize() {

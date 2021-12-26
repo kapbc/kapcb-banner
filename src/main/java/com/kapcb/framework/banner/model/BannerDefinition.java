@@ -51,12 +51,31 @@ public class BannerDefinition implements Banner {
      */
     private BannerModel bannerModel;
 
+    public BannerDefinition(Class<?> resourceClass, String resourceLocation, String defaultBanner) {
+        this.resourceClass = resourceClass;
+        this.resourceLocation = resourceLocation;
+        this.defaultBanner = defaultBanner;
+    }
+
     @Override
     public InputStream prepareRender() {
         if (StringUtils.isBlank(this.resourceLocation)) {
             return null;
         }
         return this.resourceClass.getResourceAsStream(this.resourceLocation);
+    }
+
+    @Override
+    public String getImplementationVersion() {
+        if (this.resourceClass == null) {
+            return null;
+        }
+        String implementationVersion = this.resourceClass.getPackage().getImplementationVersion();
+        if (implementationVersion != null) {
+            return implementationVersion;
+        } else {
+            return this.defaultBanner;
+        }
     }
 
     @Override

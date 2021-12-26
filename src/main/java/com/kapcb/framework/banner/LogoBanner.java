@@ -41,13 +41,12 @@ public class LogoBanner extends AbstractBanner {
      */
     private boolean boldOff;
 
-
-    public LogoBanner(int elementCount, int elementLineCount, Color[] elementColors, boolean boldOff) {
+    public LogoBanner(Class<?> resourceClass, String resourceLocation, String defaultBanner, int elementCount, int elementLineCount, Color[] elementColors, boolean boldOff) {
+        super(resourceClass, resourceLocation, defaultBanner);
         this.elementCount = elementCount;
         this.elementLineCount = elementLineCount;
         this.elementColors = elementColors;
         this.boldOff = boldOff;
-        initialize();
     }
 
     @Override
