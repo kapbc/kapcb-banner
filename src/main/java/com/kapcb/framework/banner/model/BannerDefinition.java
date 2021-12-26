@@ -5,6 +5,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.apache.commons.lang3.StringUtils;
+
+import java.io.InputStream;
+import java.util.Objects;
 
 /**
  * <a>Title: BannerDefinition </a>
@@ -20,7 +24,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class BannerDefinition {
+public class BannerDefinition implements Banner {
 
     /**
      * banner's resource class
@@ -46,5 +50,23 @@ public class BannerDefinition {
      * banner config model
      */
     private BannerModel bannerModel;
+
+    @Override
+    public InputStream prepareRender() {
+        if (StringUtils.isBlank(this.resourceLocation)) {
+            return null;
+        }
+        return this.resourceClass.getResourceAsStream(this.resourceLocation);
+    }
+
+    @Override
+    public void setResourceLocation(String location) {
+        if (Objects.nonNull(location)) {
+            this.resourceLocation = location;
+        } else {
+            this.resourceLocation = null;
+        }
+    }
+
 
 }

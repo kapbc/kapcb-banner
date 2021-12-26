@@ -1,16 +1,16 @@
 package com.kapcb.framework.banner;
 
 /**
- * <a>Title: Banner </a>
+ * <a>Title: BannerRender </a>
  * <a>Author: Kapcb <a>
- * <a>Description: Banner <a>
+ * <a>Description: BannerRender <a>
  *
  * @author Kapcb
  * @version 1.0
  * @date 2021/12/26 16:23
  * @since 1.0
  */
-public interface Banner {
+public interface BannerRender {
 
     /**
      * 初始化获取 Banner 文件
