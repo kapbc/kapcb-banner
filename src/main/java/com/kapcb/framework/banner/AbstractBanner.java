@@ -35,7 +35,9 @@ public abstract class AbstractBanner implements BannerRender {
     public void initialize() {
         String bannerText = null;
         try (InputStream inputStream = banner.prepareRender()) {
-            bannerText = IOUtils.toString(inputStream, StringPool.CHARACTER_SET_UTF_8_LOWER.value());
+            if (inputStream != null) {
+                bannerText = IOUtils.toString(inputStream, StringPool.CHARACTER_SET_UTF_8_LOWER.value());
+            }
         } catch (IOException e) {
             log.error("initialize banner error, error message is : {}", e.getMessage());
         } finally {

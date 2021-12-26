@@ -59,10 +59,10 @@ public class BannerDefinition implements Banner {
 
     @Override
     public InputStream prepareRender() {
-        if (StringUtils.isBlank(this.resourceLocation)) {
+        if (this.resourceLocation == null) {
             return null;
         }
-        return this.resourceClass.getResourceAsStream(this.resourceLocation);
+        return this.resourceClass.getResourceAsStream(file);
     }
 
     @Override
