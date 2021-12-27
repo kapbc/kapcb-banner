@@ -1,5 +1,6 @@
 package com.kapcb.framework.banner;
 
+import com.kapcb.framework.banner.banner.LogoBanner;
 import com.taobao.text.Color;
 
 /**

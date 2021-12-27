@@ -1,14 +1,12 @@
-package com.kapcb.framework.banner.model;
+package com.kapcb.framework.banner.banner;
 
 import com.kapcb.framework.banner.enums.BannerModel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.apache.commons.lang3.StringUtils;
 
 import java.io.InputStream;
-import java.util.Objects;
 
 /**
  * <a>Title: BannerDefinition </a>

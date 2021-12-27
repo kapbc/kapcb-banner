@@ -1,10 +1,9 @@
-package com.kapcb.framework.banner;
+package com.kapcb.framework.banner.banner;
 
 import cn.hutool.core.util.StrUtil;
 import com.kapcb.framework.common.constants.enums.StringPool;
 import com.taobao.text.Color;
 import com.taobao.text.Decoration;
-import com.taobao.text.ui.Element;
 import com.taobao.text.ui.LabelElement;
 import com.taobao.text.ui.TableElement;
 import com.taobao.text.util.RenderUtil;

@@ -1,4 +1,5 @@
-package com.kapcb.framework.banner;
+package com.kapcb.framework.banner.banner;
+
 
 /**
  * <a>Title: VersionBanner </a>
