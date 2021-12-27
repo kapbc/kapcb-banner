@@ -1,6 +1,5 @@
 package com.kapcb.framework.banner.banner;
 
-import com.kapcb.framework.banner.enums.BannerModel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -43,11 +42,6 @@ public class BannerDefinition implements Banner {
      * final show banner
      */
     private String banner;
-
-    /**
-     * banner config model
-     */
-    private BannerModel bannerModel;
 
     public BannerDefinition(Class<?> resourceClass, String resourceLocation, String defaultBanner) {
         this.resourceClass = resourceClass;
